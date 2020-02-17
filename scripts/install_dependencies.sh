@@ -58,6 +58,7 @@ service mysqld restart
 /sbin/chkconfig php-fpm on
 service php-fpm restart
 
+/sbin/chkconfig nginx on
 service nginx restart
 
 # Ensure aws-cli is installed and configured

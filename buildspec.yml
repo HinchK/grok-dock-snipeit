@@ -6,7 +6,7 @@ version: 0.2
 # REPOSITORY_URI
 # 123456789012.dkr.ecr.us-east-1.amazonaws.com/example-git-a1b2c3d4e5f6
 # TEMPLATE_BUCKET
-# grokability-dev
+# your-s3-bucket-name
 
 phases:
   pre_build:
@@ -20,8 +20,8 @@ phases:
       - printf '{"tag":"%s"}' "$(cat /tmp/build_id.out)" > /tmp/build.json
       # App config is copied to S3 using "docker/push-config-s3.sh" script
       - echo "Retrieve app config from Amazon S3 template bucket ($TEMPLATE_BUCKET)..."
-      - aws s3 cp "s3://$TEMPLATE_BUCKET/config/.env" laravel/.env
-      - echo APP_VERSION=$CODEBUILD_RESOLVED_SOURCE_VERSION >> laravel/.env
+      - aws s3 cp "s3://$TEMPLATE_BUCKET/codebuild/deploy/.env" snipe-it/.env
+      - echo APP_VERSION=$CODEBUILD_RESOLVED_SOURCE_VERSION >> snipe-it/.env
   build:
     commands:
       - echo Build started on `date`
