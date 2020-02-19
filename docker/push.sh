@@ -1,8 +1,9 @@
 #!/bin/bash
 
+TEMPLATE_URI="YOUR-TEMPLATE_URI_REPOSITORY_URL"
 echo "TEMPLATE_URI=$TEMPLATE_URI"
 
-CMD_GET_LOGIN="aws ecr get-login --no-include-email --region us-east-1"
+CMD_GET_LOGIN="aws ecr get-login --no-include-email --region us-east-2"
 echo $CMD_GET_LOGIN
 
 CMD_LOGIN=`$CMD_GET_LOGIN`
