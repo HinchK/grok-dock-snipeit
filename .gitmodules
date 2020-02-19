@@ -1,4 +1,3 @@
-[submodule "snipe-it"]
-	path = snipe-it
+[submodule "snipeit"]
+	path = snipeit
 	url = https://hinchk@github.com/snipe/snipe-it.git
-	branch = develop
